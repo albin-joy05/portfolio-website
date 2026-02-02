@@ -147,6 +147,16 @@ section{
 .home-content h3{
   margin: 1rem 0;
   font-size: 3rem;
+  min-height: 1.2em;
+}
+.typing-cursor{
+  color: var(--main-color);
+  background: none;
+  background-clip: unset;
+  animation: typing-blink 0.7s step-end infinite;
+}
+@keyframes typing-blink{
+  50%{ opacity: 0; }
 }
 .home-content p{
   font-size: 1.5rem;

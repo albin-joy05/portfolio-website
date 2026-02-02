@@ -1,6 +1,39 @@
 (function () {
   'use strict';
 
+  (function initTyping() {
+    var typedEl = document.getElementById('typed-text');
+    if (!typedEl) return;
+    var phrases = ['Software Developer', 'Web Developer', 'Software Engineer', 'Full Stack Developer'];
+    var phraseIndex = 0;
+    var charIndex = 0;
+    var isDeleting = false;
+    var tick = 80;
+    var holdEnd = 1500;
+    var holdDelete = 400;
+
+    function step() {
+      var phrase = phrases[phraseIndex];
+      if (isDeleting) {
+        typedEl.textContent = phrase.slice(0, charIndex - 1);
+        charIndex--;
+        tick = charIndex ? 50 : holdDelete;
+      } else {
+        typedEl.textContent = phrase.slice(0, charIndex + 1);
+        charIndex++;
+        tick = charIndex < phrase.length ? 120 : holdEnd;
+      }
+      if (!isDeleting && charIndex === phrase.length) {
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+      }
+      setTimeout(step, tick);
+    }
+    setTimeout(step, 400);
+  })();
+
   const homeSection = document.getElementById('home');
   const aboutSection = document.getElementById('about');
   const homeImg = document.querySelector('.home-img img');
