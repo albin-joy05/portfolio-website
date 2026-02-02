@@ -7,13 +7,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
 </head>
 <body>
+
+    <div class="custom-cursor" id="custom-cursor" aria-hidden="true">
+        <span class="cursor-ring"></span>
+        <span class="cursor-dot"></span>
+    </div>
 
     <div class="image-transition-wrap" id="image-transition-wrap" aria-hidden="true">
         <img src="albin.jpeg" alt="" class="image-transition-img" id="image-transition-img">
@@ -169,7 +174,7 @@
             </div>
 
             <div class="input-group-2">
-                <textarea name="" id="" placeholder="Your Message"></textarea>
+                <textarea name="message" id="contact-message" placeholder="Your Message"></textarea>
                 <input type="submit" value="Send Message" class="btn">
             </div>
         </form>
@@ -201,6 +206,6 @@
         <p class="footer-copyright">© 2025 Albin Joy. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
