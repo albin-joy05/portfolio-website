@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Albin's Portfolio Website</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,21 +15,29 @@
 </head>
 <body>
 
+    <div class="image-transition-wrap" id="image-transition-wrap" aria-hidden="true">
+        <img src="albin.jpeg" alt="" class="image-transition-img" id="image-transition-img">
+    </div>
+
     <header class="header">
         <a href="#home" class="logo">
            Albin <span>Joy</span> 
         </a>
 
-        <i class="bx bx-menu" id="menu-icon"></i>
+        <button type="button" class="menu-toggle" id="menu-icon" aria-label="Toggle menu" aria-expanded="false">
+            <i class="bx bx-menu menu-icon-open"></i>
+            <i class="bx bx-x menu-icon-close"></i>
+        </button>
 
+        <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
         <nav class="navbar">
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#services">Experience</a>
             <a href="#projects">Projects</a>
-            <a href="Contact">Contact</a>
+            <a href="#contact">Contact</a>
         </nav>
-        <button class="gradient-btn">Contact Me</button>
+        <a href="#contact" class="gradient-btn">Contact Me</a>
     </header>
     
     <section class="home" id="home">
@@ -39,25 +47,25 @@
                 I'm a <span>Software Developer</span>
             </h3>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                I'm a Computer Science student at the University of Toronto (HBSc, Co-op) with a passion for building full-stack applications and solving real problems. I've placed in hackathons, shipped projects from hydration trackers to data visualizers, and I'm always looking for the next challenge. 
             </p>
             <div class="social-icons">
-                <a href="#">
+                <a href="https://github.com/albin-joy05" target="_blank" rel="noopener" aria-label="GitHub">
                     <i class="bx bxl-github"></i>
                 </a>
-                <a href="#">
+                <a href="https://linkedin.com/in/albin-peter-joy" target="_blank" rel="noopener" aria-label="LinkedIn">
                     <i class="bx bxl-linkedin-square"></i>
                 </a>
-                <a href="#">
+                <a href="https://instagram.com/albln.pj" target="_blank" rel="noopener" aria-label="Instagram">
                     <i class="bx bxl-instagram-alt"></i>
                 </a>
-                <a href="#">
+                <a href="mailto:albin.joy@mail.utoronto.ca" aria-label="Email">
                     <i class="bx bxl-gmail"></i>
                 </a>
             </div>
 
             <div class="btn-group">
-                <a href="#" class="btn">Hire</a>
+                <a href="mailto:albin.joy@mail.utoronto.ca?subject=Portfolio%20-%20Hire%20Inquiry" class="btn" id="hire-btn" title="Email: albin.joy@mail.utoronto.ca">Hire</a>
                 <a href="#contact" class="btn">Contact</a>
             </div>
         </div>
@@ -70,79 +78,128 @@
         <div class="about-img">
             <img src="albin.jpeg" alt="">
         </div>
-        <div class="about-content">
+        <div class="about-content reveal">
             <h2>About <span>Me</span></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <a href="#" class="btn">Read More</a>
+            <p>I'm pursuing an Honors BSc in Computer Science with a minor in Math and Statistics at the University of Toronto Mississauga. I'm in the UofT Co-op program and a member of the UofT AI Club. I love turning ideas into code, whether it's full-stack web apps with React and Node, data visualization in Python, or desktop tools in Java. I thrive in teams, use Agile and Git in my projects, and I'm always sharpening my skills. Open to internships and collaboration.</p>
+            <a href="Albin_Peter_Joy_Resume.pdf" class="btn" target="_blank" rel="noopener">View Resume</a>
         </div>
     </section>
 
     <section class="services" id="services">
-        <h2 class="heading">Experience</h2>
+        <h2 class="heading reveal">Experience</h2>
 
         <div class="services-container">
-            <div class="service-box">
+            <div class="service-box reveal reveal-delay-1">
                 <div class="service-info">
                     <i class="bx bxl-figma"></i>
-                    <h4>UI / UX Designs</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h4>UI / UX Design</h4>
+                    <p>I design interfaces that are clean and user-focused. At Hikmah Hacks I helped design a donation page that earned 3rd place for its sleek, user-friendly experience. I use Figma for mockups and work closely with front-end implementation so design and code stay in sync.</p>
                 </div>
             </div>
 
-            <div class="service-box">
+            <div class="service-box reveal reveal-delay-2">
                 <div class="service-info">
                     <i class="bx bx-code"></i>
                     <h4>Frontend Development</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>I build responsive, interactive UIs with React, JavaScript, and HTML/CSS. From real-time hydration progress views to dynamic donation flows and map visualizations, I focus on smooth UX and maintainable components. Comfortable with state management and modern tooling.</p>
                 </div>
             </div>
 
-            <div class="service-box">
+            <div class="service-box reveal reveal-delay-3">
                 <div class="service-info">
                     <i class="bx bx-code-curly"></i>
-                    <h4>Backend Development</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h4>Backend & Full-Stack</h4>
+                    <p>I integrate and build back-ends with Java, Python, Flask, Node.js, Express, and MongoDB. At Sky's the Limit Hackathon, organized by the City of Mississauga, I connected a React front-end to Java and Flask and placed 6th out of 24+ teams. I also write unit tests and care about secure, scalable APIs.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="projects" id="projects">
-        <h2 class="heading">Projects</h2>
+        <h2 class="heading reveal">Projects</h2>
         <div class="projects-box">
-            <div class="project-card">
-                <img src="paint.png" alt="">
+            <div class="project-card reveal">
+                <img src="paint.png" alt="Paint application screenshot">
 
                 <h3>Paint Application</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <div class="btn">Review Project</div>
+                <p>Team-built paint app (Java, JavaFX) similar to Microsoft Paint. Implemented 10+ drawing tools and shapes with Agile/Scrum—sprint planning, stand-ups, retrospectives. Used Git for version control, pull requests, and code reviews. Strong focus on design patterns and clean architecture.</p>
+                <a href="#contact" class="btn">Learn More</a>
             </div>
 
-            <div class="project-card">
-                <img src="call.png" alt="">
+            <div class="project-card reveal">
+                <img src="call.png" alt="Customer call map visualizer screenshot">
 
                 <h3>Customer Call Map Visualizer</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <div class="btn">Review Project</div>
+                <p>Python system that analyzes Toronto customer calls and visualizes activity on a real-time map. Includes filtering by customer or date, detailed billing reports (Month-to-Month, Term, Prepaid), and Python unit tests with ~99% coverage for reliable, production-ready logic.</p>
+                <a href="#contact" class="btn">Learn More</a>
             </div>
 
-            <div class="project-card">
-                <img src="eg20.png" alt="">
+            <div class="project-card reveal">
+                <img src="eg20.png" alt="EGG2O hydration app screenshot">
 
-                <h3>EGG20 - Hydration Tracking Application</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <div class="btn">Review Project</div>
+                <h3>EGG2O – Hydration Tracking App</h3>
+                <p>Full-stack gamified hydration tracker (React, Node.js, Express, MongoDB). Users create accounts, log water intake, and unlock egg-hatching animations on daily goals. Secure auth, session management, and responsive React UI with real-time progress visualization.</p>
+                <a href="#contact" class="btn">Learn More</a>
             </div>
 
-            <div class="project-card">
-                <img src="tree-map.png" alt="">
+            <div class="project-card reveal">
+                <img src="tree-map.png" alt="Tree-map visualizer screenshot">
 
                 <h3>Tree-Map Visualizer</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <div class="btn">Review Project</div>
+                <p>Interactive Python tool for hierarchical data (file systems, research papers). Recursive algorithms for size calculation and dynamic node expansion cut processing time by 40%+. Supports real-time visualization, file deletion, expansion, and movement across directories.</p>
+                <a href="#contact" class="btn">Learn More</a>
             </div>
         </div>
     </section>
+
+    <section class="contact" id="contact">
+        <h2 class="heading reveal">Contact <span>Me</span></h2>
+
+        <form class="reveal contact-form" id="contact-form" action="https://formspree.io/f/mlglawpr" method="POST">
+            <input type="hidden" name="_subject" value="Portfolio contact form">
+            <div class="input-group">
+                <div class="input-box">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-box">
+                    <input type="tel" name="phone" placeholder="Phone Number" required>
+                    <input type="text" name="subject" placeholder="Subject (optional)">
+                </div>
+            </div>
+
+            <div class="input-group-2">
+                <textarea name="message" id="contact-message" placeholder="Your Message" required></textarea>
+                <input type="submit" value="Send Message" class="btn">
+            </div>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-social">
+            <a href="https://github.com/albin-joy05" target="_blank" rel="noopener" aria-label="GitHub">
+                <i class="bx bxl-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/albin-peter-joy" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <i class="bx bxl-linkedin-square"></i>
+            </a>
+            <a href="https://instagram.com/albln.pj" target="_blank" rel="noopener" aria-label="Instagram">
+                <i class="bx bxl-instagram-alt"></i>
+            </a>
+            <a href="mailto:albin.joy@mail.utoronto.ca" aria-label="Email">
+                <i class="bx bxl-gmail"></i>
+            </a>
+        </div>
+
+        <nav class="footer-nav">
+            <a href="#about">About</a>
+            <a href="#services">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <p class="footer-copyright">© 2025 Albin Joy. All rights reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
